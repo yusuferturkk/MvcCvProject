@@ -1,0 +1,21 @@
+﻿@model MvcCv.Models.TblSkills
+
+@{
+    ViewBag.Title = "AddSkills";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yetenek Ekleme Ekranı</h2>
+<br />
+
+<form method="post">
+    <label>Yeteneklerim</label>
+    @Html.TextBoxFor(x => x.Skill, new { @class = "form-control" })
+    <br />
+
+    <label>Oran</label>
+    @Html.TextBoxFor(x => x.Rating, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-primary">Yeteneği Ekle</button>
+</form>

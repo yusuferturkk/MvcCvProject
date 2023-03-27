@@ -1,0 +1,64 @@
+﻿@model List<MvcCv.Models.TblEducation>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Eğitim Listem</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Başlık</th>
+                                            <th>Alt Başlık-1</th>
+                                            <th>Alt Başlık-2</th>
+                                            <th>GPA</th>
+                                            <th>Tarih</th>
+                                            <th>Güncelle</th>
+                                            <th>Kaldır</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@item.Id</td>
+                                                <td>@item.Title</td>
+                                                <td>@item.SubTitle1</td>
+                                                <td>@item.SubTitle2</td>
+                                                <td>@item.GPA</td>
+                                                <td>@item.Date</td>
+                                                <td><a href="/Education/DeleteEducation/@item.Id/" class="btn btn-danger fas fa-trash-alt"> Sil</a></td>
+                                                <td><a href="/Education/UpdateEducation/@item.Id/" class="btn btn-success fas fa-edit"> Güncelle</a></td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table><br />
+                                <a href="/Education/AddEducation" class="btn btn-primary"> Yeni Eğitim Ekle</a>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+</body>
+</html>

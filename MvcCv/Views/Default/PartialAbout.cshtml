@@ -1,0 +1,17 @@
+﻿@model MvcCv.Models.TblAbout
+
+<section class="resume-section" id="about">
+    <div class="resume-section-content">
+        <h1 class="mb-0">
+            @Model.Name
+            <span class="text-primary">@Model.Surname</span>
+        </h1>
+        <div class="subheading mb-5">
+            @Model.Address · @Model.Phone ·
+            <a href="mailto:@Model.Email">@Model.Email</a>
+        </div>
+        <p class="lead mb-5">@Model.Description</p>
+        @Html.Action("PartialSocialMedia", "Default")
+    </div>
+</section>
+<hr class="m-0" />

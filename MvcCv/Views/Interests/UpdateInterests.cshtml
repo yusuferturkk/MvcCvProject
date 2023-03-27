@@ -1,0 +1,21 @@
+﻿@model MvcCv.Models.TblInterests
+
+@{
+    ViewBag.Title = "UpdateInterests";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hobi Güncelleme Ekranı</h2>
+<br />
+
+<form method="post">
+    <label>Açıklama-1</label>
+    @Html.TextBoxFor(x => x.Description1, new { @class = "form-control" })
+    <br />
+
+    <label>Açıklama-2</label>
+    @Html.TextBoxFor(x => x.Description2, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-primary">Hobi Güncelle</button>
+</form>

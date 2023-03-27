@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<body id="page-top">
+    <!-- Page Content-->
+    <div class="container-fluid p-0">
+        <!-- About-->
+        @Html.Action("PartialAbout")
+        <!-- Experience-->
+        @Html.Action("PartialExperience")
+        <!-- Education-->
+        @Html.Action("PartialEducation")
+        <!-- Skills-->
+        @Html.Action("PartialSkills")
+        <!-- Interests-->
+        @Html.Action("PartialInterests")
+        <!-- Awards-->
+        @Html.Action("PartialCertificate")
+        <!-- Contact-->
+        @Html.Action("PartialContact")
+    </div>
+</body>
+</html>

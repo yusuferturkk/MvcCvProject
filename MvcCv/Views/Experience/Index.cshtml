@@ -1,0 +1,62 @@
+﻿@model List<MvcCv.Models.TblExperience>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Deneyim Listem</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Başlık</th>
+                                            <th>Alt Başlık</th>
+                                            <th>Açıklama</th>
+                                            <th>Tarih</th>
+                                            <th>Güncelle</th>
+                                            <th>Kaldır</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@item.Id</td>
+                                                <td>@item.Title</td>
+                                                <td>@item.SubTitle</td>
+                                                <td>@item.Description</td>
+                                                <td>@item.Date</td>
+                                                <td><a href="/Experience/DeleteExperience/@item.Id/" class="btn btn-danger fas fa-trash-alt"> Sil</a></td>
+                                                <td><a href="/Experience/UpdateExperience/@item.Id/" class="btn btn-success fas fa-edit"> Güncelle</a></td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table><br />
+                                        <a href="/Experience/AddExperience" class="btn btn-primary"> Yeni Deneyim Ekle</a>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+</body>
+</html>

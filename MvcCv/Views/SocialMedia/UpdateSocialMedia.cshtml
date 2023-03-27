@@ -1,0 +1,25 @@
+﻿@model MvcCv.Models.TblSocialMedia
+
+@{
+    ViewBag.Title = "UpdateSocialMedia";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Sosyal Medya Güncelleme Ekranı</h2>
+<br />
+
+<form method="post">
+    <label>Sosyal Medya İsmi</label>
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+
+    <label>Sosyal Medya Linki</label>
+    @Html.TextBoxFor(x => x.Link, new { @class = "form-control" })
+    <br />
+
+    <label>İkon Değeri</label>
+    @Html.TextBoxFor(x => x.Icon, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-primary">Hesabı Güncelle</button>
+</form>

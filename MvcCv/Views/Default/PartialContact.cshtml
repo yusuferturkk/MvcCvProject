@@ -1,0 +1,28 @@
+﻿@model MvcCv.Models.TblContact
+
+<section class="resume-section" id="contact">
+    <div class="resume-section-content">
+        <h2 class="mb-5">İletişim</h2>
+        <form method="post">
+            <label>Ad Soyad</label>
+            @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+            <br />
+
+            <label>Mail</label>
+            @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+            <br />
+
+            <label>Konu</label>
+            @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+            <br />
+
+            <label>Mesaj</label>
+            @Html.TextAreaFor(x => x.Message, new { @class = "form-control" })
+            <br />
+
+            @Html.HiddenFor(x => x.Date)
+
+            <button class="btn btn-primary" style="color:white">Mesaj Gönder</button>
+        </form>
+    </div>
+</section>

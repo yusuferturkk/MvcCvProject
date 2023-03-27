@@ -1,0 +1,21 @@
+﻿@model MvcCv.Models.TblAdmin
+
+@{
+    ViewBag.Title = "AddAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Admin Ekleme Ekranı</h3>
+<br />
+
+<form method="post">
+    <label>Kullanıcı Adı</label>
+    @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
+    <br />
+
+    <label>Şifre</label>
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-primary">Admin Ekle</button>
+</form>

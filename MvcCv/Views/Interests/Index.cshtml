@@ -1,0 +1,58 @@
+﻿@model List<MvcCv.Models.TblInterests>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Hobi Listem</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Açıklama-1</th>
+                                            <th>Açıklama-2</th>
+                                            <th>Sil</th>
+                                            <th>Güncelle</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@item.Id</td>
+                                                <td>@item.Description1</td>
+                                                <td>@item.Description2</td>
+                                                <td><a href="/Interests/DeleteInterests/@item.Id/" class="btn btn-danger fas fa-trash-alt"> Sil</a></td>
+                                                <td><a href="/Interests/UpdateInterests/@item.Id/" class="btn btn-success fas fa-edit"> Güncelle</a></td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table><br />
+                                <a href="/Interests/AddInterests" class="btn btn-primary"> Yeni Hobi Ekle</a>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+</body>
+</html>

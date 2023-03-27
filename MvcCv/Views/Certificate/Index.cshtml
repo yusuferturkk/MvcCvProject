@@ -1,0 +1,70 @@
+﻿@model List<MvcCv.Models.TblCertificate>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+
+                <!-- /.col -->
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header p-2">
+                            <ul class="nav nav-pills">
+                                <li class="nav-item"><a class="nav-link active" href="#timeline" data-toggle="tab">Sertifikalarım</a></li>
+                            </ul>
+                        </div><!-- /.card-header -->
+                        <div class="card-body">
+                            <div class="tab-content">
+                                <form method="post">
+                                    <div class="tab-pane" id="timeline">
+                                        <!-- The timeline -->
+                                        <div class="timeline timeline-inverse">
+                                            <!-- timeline time label -->
+                                            <!-- /.timeline-label -->
+                                            <!-- timeline item -->
+
+
+                                            @foreach (var item in Model)
+                                            {
+                                                <div class="time-label">
+                                                    <span class="bg-success">
+                                                        @item.Date
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <i class="fas fa-comments bg-warning"></i>
+                                                    <div class="timeline-item">
+                                                        <div class="timeline-body">
+                                                            @item.Description
+                                                        </div>
+                                                        <div class="timeline-footer">
+                                                            <a href="/Certificate/DeleteCertificate/@item.Id/" style="width:100px;" class="btn btn-danger btn-flat btn-sm">Sil</a>
+                                                            <a href="/Certificate/UpdateCertificate/@item.Id/" style="width:100px;" class="btn btn-success btn-flat btn-sm">Düzenle</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                        <a href="/Certificate/AddCertificate/" class="btn btn-primary">Yeni Sertifika Ekle</a>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- /.tab-content -->
+                        </div><!-- /.card-body -->
+                    </div>
+                    <!-- /.nav-tabs-custom -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+</body>
+</html>

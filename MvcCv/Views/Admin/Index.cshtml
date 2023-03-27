@@ -1,0 +1,56 @@
+﻿@model List<MvcCv.Models.TblAdmin>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Admin İşlemleri</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Kullanıcı Adı</th>
+                                            <th>Sil</th>
+                                            <th>Güncelle</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@item.Id</td>
+                                                <td>@item.Username</td>
+                                                <td><a href="/Admin/DeleteAdmin/@item.Id/" class="btn btn-danger fas fa-trash-alt"> Sil</a></td>
+                                                <td><a href="/Admin/UpdateAdmin/@item.Id/" class="btn btn-success fas fa-edit"> Düzenle</a></td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table><br />
+                                <a href="/Admin/AddAdmin/" class="btn btn-primary"> Yeni Kullanıcı Ekle</a>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+﻿@model List<MvcCv.Models.TblSkills>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Yetenek Listem</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th style="width:600px;">Yeteneklerim</th>
+                                            <th>Derece</th>
+                                            <th>Oran</th>
+                                            <th style="width:100px;">Sil</th>
+                                            <th style="width:100px;">Güncelle</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@item.Id</td>
+                                                <td>@item.Skill</td>
+                                                <td style="padding-top:20px">
+                                                    <div class="progress progress-xs">
+                                                        @if (@item.Rating >= 0 && @item.Rating < 50)
+                                                        {
+                                                            <div class="progress-bar bg-danger" style="width:@item.Rating%"></div>
+                                                        }
+                                                        else if (@item.Rating >= 50 && @item.Rating < 70)
+                                                        {
+                                                            <div class="progress-bar bg-warning" style="width:@item.Rating%"></div>
+                                                        }
+                                                        else if (@item.Rating >= 70 && @item.Rating < 85)
+                                                        {
+                                                            <div class="progress-bar bg-primary" style="width:@item.Rating%"></div>
+                                                        }
+                                                        else if (@item.Rating >= 85 && @item.Rating < 100)
+                                                        {
+                                                            <div class="progress-bar bg-success" style="width:@item.Rating%"></div>
+                                                        }
+                                                    </div>
+                                                </td>
+                                                @if (@item.Rating >= 0 && @item.Rating < 50)
+                                                {
+                                                    <td><span class="badge bg-danger">@item.Rating%</span></td>
+                                                }
+                                                else if (@item.Rating >= 50 && @item.Rating < 70)
+                                                {
+                                                    <td><span class="badge bg-warning">@item.Rating%</span></td>
+                                                }
+                                                else if (@item.Rating >= 70 && @item.Rating < 85)
+                                                {
+                                                    <td><span class="badge bg-primary">@item.Rating%</span></td>
+                                                }
+                                                else if (@item.Rating >= 85 && @item.Rating < 100)
+                                                {
+                                                    <td><span class="badge bg-success">@item.Rating%</span></td>
+                                                }
+                                                <td><a href="/Skills/DeleteSkills/@item.Id/" class="btn btn-danger"> Sil</a></td>
+                                                <td><a href="/Skills/UpdateSkills/@item.Id/" class="btn btn-success"> Güncelle</a></td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table><br />
+                                <a href="/Skills/AddSkills/" class="btn btn-primary">Yeni Yetenek Ekle</a>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+        <!-- /.content -->
+    </div>
+</body>
+</html>
