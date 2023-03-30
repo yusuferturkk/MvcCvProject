@@ -2,13 +2,13 @@
 
 ## PROJE DETAYLARI
 
-* .Net Framework Mvc5 ile yazılmış SQL Server tabanlı dinamik bir Cv sitesi.
-* DbFirst yaklaşımını ele alınarak. Veritabanı tabloları oluşturuldu ve projeye Entity Data Model olarak dahil edildi.
-* Repository Design Pattern ile Entity Framework ORM aracını kombine edip CRUD işlemleri gerçekleştirildi.
-* Admin panel girişi ile site üzerinde değişikliklerimiz arka planda yapabiliyoruz.
+* .Net Framework Mvc5 ile yazılmış SQL Server tabanlı dinamik bir Cv web sitesi.
+* DbFirst yaklaşımını ele alınarak önce SQL Server'da tablolarımızı oluşturduk.
+* Oluşturduğumuz tabloları projemize Entity Data Model ile dahil ettik.
+* Repository Design Pattern ile Entity Framework ORM aracını kombine edip CRUD işlemleri gerçekleştirdik.
+* Admin panelimiz sayesinde site üzerindeki değişikliklerimizi arka planda yapabiliyoruz.
 * Fluent Validation ile eklenmek veya güncellenmek istenen verileri kontrolden geçiriyoruz.
-* Kurallar dahilinde uygun görülürse işlem gerçekleştiriliyor.
-* İletişim sayfasından gönderilen mesajları admin panel üzerinden görebiliyoruz.
+* İletişim sayfasından gönderilen mesajları admin panel üzerinden görüntüleyebiliyoruz.
 
 <br/>
 
