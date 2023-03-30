@@ -407,6 +407,8 @@
     <Content Include="Templates\AdminLTE-3.0.4\docs\_layouts\page.html" />
     <Content Include="Templates\AdminLTE-3.0.4\docs\_layouts\post.html" />
     <Content Include="Templates\AdminLTE-3.0.4\images\image-1.jpg" />
+    <Content Include="Templates\AdminLTE-3.0.4\images\image-11.jpg" />
+    <Content Include="Templates\AdminLTE-3.0.4\images\image-12.jpg" />
     <Content Include="Templates\AdminLTE-3.0.4\images\image-2.jpg" />
     <Content Include="Templates\AdminLTE-3.0.4\images\image-3.jpg" />
     <Content Include="Templates\AdminLTE-3.0.4\images\image-4.jpg" />
