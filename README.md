@@ -5,7 +5,6 @@
 * .Net Framework Mvc5 ile yazılmış SQL Server tabanlı dinamik bir Cv web sitesi.
 * DbFirst yaklaşımını ele alınarak önce SQL Server'da tablolarımızı oluşturduk.
 * Oluşturduğumuz tabloları projemize Entity Data Model ile dahil ettik.
-* Repository Design Pattern ile Entity Framework ORM aracını kombine edip CRUD işlemleri gerçekleştirdik.
 * Admin panelimiz sayesinde site üzerindeki değişikliklerimizi arka planda yapabiliyoruz.
 * Fluent Validation ile eklenmek veya güncellenmek istenen verileri kontrolden geçiriyoruz.
 * İletişim sayfasından gönderilen mesajları admin panel üzerinden görüntüleyebiliyoruz.
